@@ -1,5 +1,16 @@
 ## note
-This repo is a clone of [xarantolus/fdroid](https://github.com/xarantolus/fdroid), filtered (via git-filter-repo's clean-ignore filter) to remove all app-specific commits
+This repo is a clone of [xarantolus/fdroid](https://github.com/xarantolus/fdroid), filtered (via git-filter-repo's clean-ignore filter) to remove all app-specific commits. This makes it easier to clone and use yourself without extra history increasing the repo size.
+
+### Wishlist
+- Move fdroid commands out of metascoop if possible.
+- maybe use official [gh client](https://github.com/cli/cli) instead of metascoop.
+    - maybe output release list to a file, then compare incoming releases to decide whether or not to download more releases.
+- caching?
+- use a different image. medzik/fdroidserver docker image is rebuilt daily(?) with latest fdroid ppa preinstalled, this will cut down on setup time.
+- move more commands to the workflow file insteax of using a script
+- append credentials to fdroid config file instead of replacing file. this will allow changing non-sensitive details (description, url, etc) without updating secrets
+- some way to remove history. unfortunately, we can't use the built-in fdroid settings for this, since it's more than just an fdroid repo (metascoop, etc are included). Maybe `git commit --amend` after removing old versions?
+
 
 # fdroid
 This repository hosts an [F-Droid](https://f-droid.org/) repo for my apps. This allows you to install and update apps very easily.
